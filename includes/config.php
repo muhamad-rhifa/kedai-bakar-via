@@ -2,11 +2,12 @@
 // includes/config.php
 session_start();
 
-// Database configuration
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'kedai_bakar_via');
+// Database configuration (Railway-ready)
+define('DB_HOST', getenv('MYSQLHOST') ?: 'localhost');
+define('DB_USER', getenv('MYSQLUSER') ?: 'root');
+define('DB_PASS', getenv('MYSQLPASSWORD') ?: '');
+define('DB_NAME', getenv('MYSQLDATABASE') ?: 'kedai_bakar_via');
+define('DB_PORT', getenv('MYSQLPORT') ?: '3306');
 
 // Base URL
 define('BASE_URL', 'http://localhost/kedai-bakar-via/');
