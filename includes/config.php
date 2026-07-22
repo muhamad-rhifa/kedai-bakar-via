@@ -2,12 +2,12 @@
 // includes/config.php
 session_start();
 
-// Database configuration (Railway-ready)
-define('DB_HOST', getenv('MYSQLHOST') ?: 'localhost');
-define('DB_USER', getenv('MYSQLUSER') ?: 'root');
-define('DB_PASS', getenv('MYSQLPASSWORD') ?: '');
-define('DB_NAME', getenv('MYSQLDATABASE') ?: 'kedai_bakar_via');
-define('DB_PORT', getenv('MYSQLPORT') ?: '3306');
+// Database configuration (Railway-ready with FrankenPHP support)
+define('DB_HOST', $_SERVER['MYSQLHOST'] ?? getenv('MYSQLHOST') ?: 'localhost');
+define('DB_USER', $_SERVER['MYSQLUSER'] ?? getenv('MYSQLUSER') ?: 'root');
+define('DB_PASS', $_SERVER['MYSQLPASSWORD'] ?? getenv('MYSQLPASSWORD') ?: '');
+define('DB_NAME', $_SERVER['MYSQLDATABASE'] ?? getenv('MYSQLDATABASE') ?: 'kedai_bakar_via');
+define('DB_PORT', $_SERVER['MYSQLPORT'] ?? getenv('MYSQLPORT') ?: '3306');
 
 // Base URL
 define('BASE_URL', 'http://localhost/kedai-bakar-via/');
